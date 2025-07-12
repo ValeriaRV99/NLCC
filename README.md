@@ -2,7 +2,7 @@
 
 This repository provides tools and workflows for incorporating **Non-Linear Core Corrections (NLCC)** into **local pseudopotentials**. Two distinct methodologies are presented for constructing the NLCC contribution, each implemented through interactive Jupyter notebooks.
 
-## 🧪 Methods of NLCC Construction
+## Methods of NLCC Construction
 
 ### 1. Gaussian-Based NLCC
 - **Notebook:** `NLCC_Gaussian.ipynb`
