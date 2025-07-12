@@ -25,7 +25,7 @@ atoms = FaceCenteredCubic(
 )
 
 ions = Ions.from_ase(atoms)
-PP_list = {'Ag': '../Ag_nlcc_4_gbrv.psp8'} ## Pseudo with NLCC
+PP_list = {'Ag': '../Ag_AE_1_gbrv.psp8'} ## Pseudo with NLCC
 grid = DirectGrid(ecut=50, lattice=ions.cell, mp=mp, full=False)
 rho = DirectField(grid=grid)
 
@@ -42,7 +42,7 @@ EnergyEvaluator = TotalFunctional(**funcDict)
 
 rho[:] = ions.get_ncharges() / ions.cell.volume
 
-opt_options = {'econv' : 1e-10, "maxiter": 100}
+opt_options = {'econv' : 1e-6, "maxiter": 100}
 optimizer = Optimization(EnergyEvaluator=EnergyEvaluator, optimization_options = opt_options, optimization_method='CG')
 
 calc = DFTpyCalculator(optimizer = optimizer, evaluator = EnergyEvaluator, rho = rho)
